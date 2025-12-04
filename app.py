@@ -1,14 +1,11 @@
 from database.db import init_db, get_session
-from cli.menu import main_menu
+from cli import ParkingCLI
 
-def main():
-    init_db()
-    session = get_session()
-    main_menu(session)
-    
+
 
 if __name__ == "__main__":
-    main()
+    init_db()
+
 
 DB_NAME = "parking.db"
 RATE = 5
