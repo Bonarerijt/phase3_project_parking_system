@@ -17,3 +17,5 @@ class Vehicle(Base):
 
     if __name__ == '__main__':
         main()
+
+    
