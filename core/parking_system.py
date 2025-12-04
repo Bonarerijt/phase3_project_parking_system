@@ -36,7 +36,7 @@ class ParkingSystem:
 
         now = datetime.now()
         duration = (now - slot.entry_time).total_seconds() / 60  # minutes
-        amount = duration * self.RATE_PER_MIN
+        amount = duration * self.RATE_PER_MINUTE
 
         # Save to history
         history = ParkingHistory(
