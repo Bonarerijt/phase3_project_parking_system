@@ -15,12 +15,12 @@ class ParkingSystem:
         #Checks if car is already parked
         parked = parked = self.session.query(Slot).filter_by(plate=plate, is_free=False).first()
         if parked:
-            return False, f"Car {plate} is already parked."
+            return False, f"❌ Car {plate} is already parked."
         
         # Finds free slot in group A first, then B
         slot = self.session.query(Slot).filter_by(is_free=True).order_by(Slot.group, Slot.name).first()
         if not slot:
-            return False, "No available slots."
+            return False, "❌ No available slots."
         
         slot.is_free = False
         slot.plate = plate
@@ -32,7 +32,7 @@ class ParkingSystem:
         plate = plate.upper()
         slot = self.session.query(Slot).filter_by(plate=plate, is_free=False).first()
         if not slot:
-            return False, "Car not found in parking."
+            return False, "❌ Car not found in parking."
 
         now = datetime.now()
         duration = (now - slot.entry_time).total_seconds() / 60  # minutes
