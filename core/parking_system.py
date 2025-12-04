@@ -61,6 +61,28 @@ class ParkingSystem:
             "exit_time": history.exit_time,
             "amount_paid": history.amount_paid
         }
+    def get_slots_status(self):
+        slots = self.session.query(Slot).order_by(Slot.group, Slot.name).all()
+        status = {"A": [], "B": []}
+        for s in slots:
+            duration = "-"
+            if not s.is_free and s.entry_time:
+                delta = datetime.now() - s.entry_time
+                minutes = int(delta.total_seconds() // 60)
+                seconds = int(delta.total_seconds() % 60)
+                duration = f"{minutes}m {seconds}s"
+            status[s.group].append({
+                "name": s.name,
+                "is_free": s.is_free,
+                "plate": s.plate if s.plate else "-",
+                "duration": duration
+            })
+        return status
+
+    def get_history(self):
+        return self.session.query(ParkingHistory).order_by(ParkingHistory.entry_time).all()
+
+
 
 
 
