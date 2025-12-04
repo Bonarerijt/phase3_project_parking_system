@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Float
-from database import Base
-from app import main
+from database.db import Base
+
 
 class ParkingRate(Base):
     __tablename__ = "parking_rates"
@@ -10,6 +10,3 @@ class ParkingRate(Base):
 
     def __repr__(self):
         return f"<ParkingRate {self.rate_per_hour}/hr>"
-
-    if __name__ == '__main__':
-        main()

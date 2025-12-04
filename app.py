@@ -1,8 +1,10 @@
 from database.db import init_db, get_session
+from cli.menu import main_menu
 
 def main():
     init_db()
     session = get_session()
+    main_menu(session)
     
 
 if __name__ == "__main__":

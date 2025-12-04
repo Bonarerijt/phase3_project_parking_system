@@ -1,6 +1,5 @@
-from database import Base
+from database.db import Base
 from sqlalchemy import Column, Integer, String
-from app import main
 from sqlalchemy.orm import relationship, backref
 
 class Vehicle(Base):
@@ -15,7 +14,5 @@ class Vehicle(Base):
     def __repr__(self):
         return f"<Vehicle {self.plate_number} ({self.owner_name})>"
 
-    if __name__ == '__main__':
-        main()
-
+    
     

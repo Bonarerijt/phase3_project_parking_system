@@ -1,7 +1,5 @@
-from database import Base
+from database.db import Base
 from sqlalchemy import Column, Integer, ForeignKey, DateTime, Float
-from app import main
-from sqlalchemy.orm import relationship
 from datetime import datetime
 
 
@@ -20,8 +18,3 @@ class ParkingSession(Base):
 
     def __repr__(self):
         return f"<Session vehicle={self.vehicle_id} slot={self.slot_id}>"
-
-
-
-    if __name__ == '__main__':
-        main()

@@ -1,6 +1,5 @@
-from database import Base
+from database.db import Base
 from sqlalchemy import Column, Integer, Boolean, String
-from app import main
 from sqlalchemy.orm import relationship, backref
 
 class ParkingSlot(Base):
@@ -14,6 +13,3 @@ class ParkingSlot(Base):
 
     def __repr__(self):
         return f"<ParkingSlot {self.slot_number} occupied={self.is_occupied}>"
-
-    if __name__ == '__main__':
-        main()
