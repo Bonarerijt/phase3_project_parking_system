@@ -25,4 +25,14 @@ class Slot(Base):
         entry_time = Column(DateTime())
         exit_time = Column(DateTime())
         amount_paid = Column(Float())
-        
+
+    def init_db():
+        Base.metadata.create_all(engine)
+        session = Session()
+        if session.query(Slot).count() == 0:
+            for name in ["A1","A2","A3","A4","A5","B1","B2","B3","B4","B5"]:
+                group = name[0]
+                slot = Slot(name = name, group = group)
+                session.add(slot)
+            session.commit()
+        session.close()
