@@ -61,7 +61,7 @@ This structure ensures data consistency, scalability, and easy querying for real
     ```
 
 ## Live Link
-[Git]https://github.com/Bonarerijt/phase3_project_parking_system.git
+[Git](https://github.com/Bonarerijt/phase3_project_parking_system.git)
 
 
 ## 🎥 Demo
