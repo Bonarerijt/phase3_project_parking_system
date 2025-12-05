@@ -61,11 +61,11 @@ This structure ensures data consistency, scalability, and easy querying for real
     ```
 
 ## Live Link
-[Git] https://github.com/Bonarerijt/phase3_project_parking_system.git
+[Git]https://github.com/Bonarerijt/phase3_project_parking_system.git
 
 
 ## 🎥 Demo
-Watch the demo here: [ Video](https://www.veed.io/view/7d63b1de-dc47-4bfb-8895-ddca9084a673?source=Homepage&panel=share)
+Watch the demo here: [Video](https://www.veed.io/view/a5a8e7f6-dab8-4b3d-92c5-2894441c3645?source=Homepage&panel=share)
 
 
 ## Future Enhancements
